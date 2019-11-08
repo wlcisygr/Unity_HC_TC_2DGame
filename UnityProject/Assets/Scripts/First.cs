@@ -24,4 +24,10 @@ public class First : MonoBehaviour
         // 輸出("訊息");
         print("哈囉，沃德~");
     }
+
+    private void Update()
+    {
+        print("嗨~");
+    }
 }
+
