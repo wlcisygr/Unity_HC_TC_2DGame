@@ -16,4 +16,12 @@ public class First : MonoBehaviour
     [Tooltip("這是喝了不會補血的藥水")]
     public string prop = "紅色藥水";        // 字串 - ""
     public bool dead = true;                // 布林值 - false
+
+    // 事件：在特定時間點已指定次數執行
+    // 開始：遊戲播放時執行一次
+    private void Start()
+    {
+        // 輸出("訊息");
+        print("哈囉，沃德~");
+    }
 }
