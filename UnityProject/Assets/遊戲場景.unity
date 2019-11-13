@@ -453,6 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7b302bf73d3a144bf542a505d3cc2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  bird: {fileID: 1981344850}
+  ground: {fileID: 1749007672}
 --- !u!1 &604068457
 GameObject:
   m_ObjectHideFlags: 0
