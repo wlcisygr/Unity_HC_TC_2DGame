@@ -3,7 +3,8 @@
 public class LearnMethod : MonoBehaviour
 {
     // 宣告方法 - 定義方法 Method
-    // 修飾詞 傳回類型 方法名稱 () { 陳述式、演算法 }
+    // 修飾詞 傳回類型 方法名稱 (參數) { 陳述式、演算法 }
+    // 參數與法：類型 名稱
     // private 只有此類別能使用此方法
     // public 
 
@@ -26,7 +27,14 @@ public class LearnMethod : MonoBehaviour
     {
         return "嗨~";
     }
-
+    
+    //                     (參數類型 參數名稱)
+    private void DriveMethod(int speed)
+    {
+        print("引擎聲音");
+        print("排氣管特效");
+        print("開車，時速：" + speed);
+    }
 
     private void Start()
     {
@@ -41,5 +49,8 @@ public class LearnMethod : MonoBehaviour
         print("有傳回方法：" + Ten());
 
         print("有傳回字串方法：" + Hi());
+
+        DriveMethod(99);
+        DriveMethod(199);
     }
 }
