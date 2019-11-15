@@ -37,6 +37,12 @@ public class LearnMethod : MonoBehaviour
     }
 
     //              (參數1, 參數2, 參數3 = 預設值)
+    /// <summary>
+    /// 發射弓箭的方法。
+    /// </summary>
+    /// <param name="count">弓箭數量</param>
+    /// <param name="property">弓箭屬性</param>
+    /// <param name="direction">弓箭方向，預設為前方</param>
     private void Shoot(int count, string property, string direction = "前方")
     {
         print("射箭數量：" + count);
