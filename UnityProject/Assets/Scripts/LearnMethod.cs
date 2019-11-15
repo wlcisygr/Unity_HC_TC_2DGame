@@ -36,6 +36,14 @@ public class LearnMethod : MonoBehaviour
         print("開車，時速：" + speed);
     }
 
+    //              (參數1, 參數2, 參數3 = 預設值)
+    private void Shoot(int count, string property, string direction = "前方")
+    {
+        print("射箭數量：" + count);
+        print("弓箭屬性：" + property);
+        print("弓箭方向：" + direction);
+    }
+
     private void Start()
     {
         // 呼叫方法
@@ -52,5 +60,8 @@ public class LearnMethod : MonoBehaviour
 
         DriveMethod(99);
         DriveMethod(199);
+
+        Shoot(10, "冰凍");
+        Shoot(100, "火焰", "四面八方");
     }
 }
