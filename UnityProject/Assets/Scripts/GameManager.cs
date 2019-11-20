@@ -57,6 +57,6 @@ public class GameManager : MonoBehaviour
         // 延遲調用("方法名稱"，延遲時間)
         // Invoke("SpawnPipe", 1.5f);
         // 延遲重複調用("方法名稱"，延遲時間，重複頻率);
-        InvokeRepeating("SpawnPipe", 0, 1.2f);
+        InvokeRepeating("SpawnPipe", 0, 1.8f);
     }
 }
