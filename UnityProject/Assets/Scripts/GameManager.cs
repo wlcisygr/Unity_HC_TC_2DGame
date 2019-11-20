@@ -40,7 +40,10 @@ public class GameManager : MonoBehaviour
     private void SpawnPipe()
     {
         // 三維向量 = new 三維向量(x, y, z);
-        Vector3 p = new Vector3(6, -3, 0);
+        //Vector3 p = new Vector3(6, Random.Range(-0.7f, 1.3f), 0);
+
+        float r = Random.Range(-0.7f, 1.3f);
+        Vector3 p = new Vector3(6, r, 0);
 
         // Quaternion.identity 零角度
 
