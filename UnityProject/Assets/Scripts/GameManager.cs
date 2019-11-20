@@ -39,8 +39,13 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SpawnPipe()
     {
+        // 三維向量 = new 三維向量(x, y, z);
+        Vector3 p = new Vector3(6, -3, 0);
+
+        // Quaternion.identity 零角度
+
         // 實例化 - 生成 (物件)
-        Instantiate(pipe);
+        Instantiate(pipe, p, Quaternion.identity);
     }
 
     private void Start()
@@ -49,6 +54,6 @@ public class GameManager : MonoBehaviour
         // 延遲調用("方法名稱"，延遲時間)
         // Invoke("SpawnPipe", 1.5f);
         // 延遲重複調用("方法名稱"，延遲時間，重複頻率);
-        InvokeRepeating("SpawnPipe", 0, 1.5f);
+        InvokeRepeating("SpawnPipe", 0, 1.2f);
     }
 }
