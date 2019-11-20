@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("最佳分數")]
     public int scoreHeight;
     [Header("水管群組")]
-    public GameObject pipe; // GameObject 可以存場景上的物件也可以存專案內的預製物
+    public GameObject pipe; // GameObject 可以存放場景上的物件或專案內的預製物
 
     /// <summary>
     /// 加分
@@ -40,12 +40,15 @@ public class GameManager : MonoBehaviour
     private void SpawnPipe()
     {
         // 實例化 - 生成 (物件)
-        Object.Instantiate(pipe);
+        Instantiate(pipe);
     }
 
     private void Start()
     {
-        SpawnPipe();
-        SpawnPipe();
+        //SpawnPipe();
+        // 延遲調用("方法名稱"，延遲時間)
+        // Invoke("SpawnPipe", 1.5f);
+        // 延遲重複調用("方法名稱"，延遲時間，重複頻率);
+        InvokeRepeating("SpawnPipe", 0, 1.5f);
     }
 }
