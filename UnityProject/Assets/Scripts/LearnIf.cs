@@ -6,6 +6,8 @@ public class LearnIf : MonoBehaviour
 
     public int score;
 
+    public int combo;
+
     private void Start()
     {
         // 判斷式 if
@@ -38,6 +40,24 @@ public class LearnIf : MonoBehaviour
         else
         {
             print("你被當了!");
+        }
+
+
+    }
+
+    private void Update()
+    {
+        if (combo >= 150)
+        {
+            print("攻擊 * 10");
+        }
+        else if (combo >= 100)
+        {
+            print("攻擊 * 5");
+        }
+        else if (combo >= 50)
+        {
+            print("攻擊 * 2");
         }
     }
 }
