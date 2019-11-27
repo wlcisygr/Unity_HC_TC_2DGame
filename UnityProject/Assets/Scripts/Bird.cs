@@ -4,6 +4,8 @@ public class Bird : MonoBehaviour
 {
     [Header("跳躍高度"), Range(50, 1500)]
     public int jump = 100;
+    [Header("旋轉角度")]
+    public float angle = 5;
     [Header("是否死亡"), Tooltip("判斷角色是否死亡")]
     public bool isDead;
 
@@ -30,7 +32,8 @@ public class Bird : MonoBehaviour
             r2d.AddForce(new Vector2(0, jump));     // 2D 剛體.推力(二為向量)
         }
 
-        r2d.SetRotation(30);                        // 2D 剛體.設定角度(角度)
+        r2d.SetRotation(angle * r2d.velocity.y);       // 2D 剛體.設定角度(角度)
+        //print(r2d.velocity);
     }
 
     /// <summary>
