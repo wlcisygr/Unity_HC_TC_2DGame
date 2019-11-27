@@ -7,6 +7,14 @@ public class Bird : MonoBehaviour
     [Header("是否死亡"), Tooltip("判斷角色是否死亡")]
     public bool isDead;
 
+    public GameObject goScore, goGM;
+
+    private void Start()
+    {
+        goScore.SetActive(true);
+        goGM.SetActive(true);
+    }
+
     /// <summary>
     /// 小雞跳躍功能。
     /// </summary>
