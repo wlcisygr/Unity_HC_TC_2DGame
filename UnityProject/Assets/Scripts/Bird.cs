@@ -9,10 +9,9 @@ public class Bird : MonoBehaviour
 
     public GameObject goScore, goGM;
 
-    private void Start()
+    private void Update()
     {
-        goScore.SetActive(true);
-        goGM.SetActive(true);
+        Jump();
     }
 
     /// <summary>
@@ -20,7 +19,11 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            goScore.SetActive(true);
+            goGM.SetActive(true);
+        }
     }
 
     /// <summary>
