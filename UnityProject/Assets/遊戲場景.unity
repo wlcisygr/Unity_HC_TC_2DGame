@@ -1706,7 +1706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: 300
-  angle: 360
+  angle: 5
   isDead: 0
   goScore: {fileID: 177436647}
   goGM: {fileID: 1552742087}

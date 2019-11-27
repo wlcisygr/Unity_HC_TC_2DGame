@@ -25,6 +25,12 @@ public class Bird : MonoBehaviour
         Dead();
     }
 
+    // 觸發開始事件：物件觸發開始時執行一次 (紀錄碰撞物件資訊) - 針對有勾選 isTrigger
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Dead();
+    }
+
     /// <summary>
     /// 小雞跳躍功能。
     /// </summary>
@@ -42,7 +48,7 @@ public class Bird : MonoBehaviour
             r2d.AddForce(new Vector2(0, jump));     // 2D 剛體.推力(二為向量)
         }
 
-        r2d.SetRotation(angle * r2d.velocity.y);       // 2D 剛體.設定角度(角度)
+        r2d.SetRotation(angle * r2d.velocity.y);    // 2D 剛體.設定角度(角度)
         //print(r2d.velocity);
     }
 
