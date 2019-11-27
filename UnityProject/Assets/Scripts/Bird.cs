@@ -24,10 +24,13 @@ public class Bird : MonoBehaviour
         {
             goScore.SetActive(true);
             goGM.SetActive(true);
-            
+
+            r2d.Sleep();                            // 2D 剛體.睡著() 重設所有物理資料
             r2d.gravityScale = 1;                   // 2D 剛體.地心引力 = 1
             r2d.AddForce(new Vector2(0, jump));     // 2D 剛體.推力(二為向量)
         }
+
+        r2d.SetRotation(30);                        // 2D 剛體.設定角度(角度)
     }
 
     /// <summary>
