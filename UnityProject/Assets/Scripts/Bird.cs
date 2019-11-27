@@ -20,8 +20,9 @@ public class Bird : MonoBehaviour
     // 碰撞開始事件：物件碰撞開始時執行一次 (紀錄碰撞物件資訊)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 碰撞.遊戲物件.名稱
-        print(collision.gameObject.name);
+        // print(collision.gameObject.name);   // 碰撞.遊戲物件.名稱
+
+        Dead();
     }
 
     /// <summary>
@@ -29,6 +30,8 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Jump()
     {
+        if (isDead) return;     // 如果 是否死亡 勾選 就跳出
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             goScore.SetActive(true);
@@ -48,7 +51,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Dead()
     {
-
+        isDead = true;
     }
 
     /// <summary>
