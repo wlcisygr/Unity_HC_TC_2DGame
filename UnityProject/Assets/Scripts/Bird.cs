@@ -17,6 +17,13 @@ public class Bird : MonoBehaviour
         Jump();
     }
 
+    // 碰撞開始事件：物件碰撞開始時執行一次 (紀錄碰撞物件資訊)
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 碰撞.遊戲物件.名稱
+        print(collision.gameObject.name);
+    }
+
     /// <summary>
     /// 小雞跳躍功能。
     /// </summary>
