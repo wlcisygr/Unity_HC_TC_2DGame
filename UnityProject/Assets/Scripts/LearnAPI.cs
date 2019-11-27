@@ -25,4 +25,12 @@ public class LearnAPI : MonoBehaviour
         Debug.Log(bird.position);
         Debug.Log(ground.position);
     }
+
+    // 更新事件：偵測按鍵
+    private void Update()
+    {
+        // 類別.靜態方法(對應引數)
+        print(Input.GetKeyDown("mouse 0"));         // 字串取得按鍵
+        print(Input.GetKeyDown(KeyCode.Mouse1));    // 列舉取得按鍵
+    }
 }
