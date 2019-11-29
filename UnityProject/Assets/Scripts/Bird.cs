@@ -13,6 +13,11 @@ public class Bird : MonoBehaviour
     public Rigidbody2D r2d;     // 2D 剛體
 
     public GameManager gm;
+    [Header("音效區域")]
+    public AudioSource aud;
+    public AudioClip soundjump;
+    public AudioClip soundcrash;
+    public AudioClip soundpass;
 
     private void Update()
     {
@@ -23,15 +28,30 @@ public class Bird : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // print(collision.gameObject.name);   // 碰撞.遊戲物件.名稱
-
-        Dead();
+        
+            Dead();
+        
+           
     }
-
+    
     // 觸發開始事件：物件觸發開始時執行一次 (紀錄碰撞物件資訊) - 針對有勾選 isTrigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Dead();
+        if (collision.gameObject.name == "水管 - 上" || collision.gameObject.name == "水管 - 下" )
+        {
+            Dead();
+        }
+   
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "通過")
+        {
+            gm.AddScore(1);
+        }
+    }
+
 
     /// <summary>
     /// 小雞跳躍功能。
@@ -48,6 +68,10 @@ public class Bird : MonoBehaviour
             r2d.Sleep();                            // 2D 剛體.睡著() 重設所有物理資料
             r2d.gravityScale = 1;                   // 2D 剛體.地心引力 = 1
             r2d.AddForce(new Vector2(0, jump));     // 2D 剛體.推力(二為向量)
+            aud.PlayOneShot(soundjump, 1.5f);
+            aud.PlayOneShot(soundcrash, 1.5f);
+            aud.PlayOneShot(soundpass, 1.5f);
+            
         }
 
         r2d.SetRotation(angle * r2d.velocity.y);    // 2D 剛體.設定角度(角度)
@@ -61,6 +85,7 @@ public class Bird : MonoBehaviour
     {
         isDead = true;
         gm.GameOver();
+        Ground.speed = 0;
     }
 
     /// <summary>
