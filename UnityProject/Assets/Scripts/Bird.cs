@@ -12,6 +12,8 @@ public class Bird : MonoBehaviour
     public GameObject goScore, goGM;
     public Rigidbody2D r2d;     // 2D 剛體
 
+    public GameManager gm;
+
     private void Update()
     {
         Jump();
@@ -58,6 +60,7 @@ public class Bird : MonoBehaviour
     private void Dead()
     {
         isDead = true;
+        gm.GameOver();
     }
 
     /// <summary>

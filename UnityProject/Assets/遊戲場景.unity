@@ -1210,6 +1210,7 @@ MonoBehaviour:
   score: 0
   scoreHeight: 0
   pipe: {fileID: 1351251538913955929, guid: edc7a81f52ee7e5449b770de15047d38, type: 3}
+  goFinal: {fileID: 1962351996}
 --- !u!4 &1552742089
 Transform:
   m_ObjectHideFlags: 0
@@ -1711,6 +1712,7 @@ MonoBehaviour:
   goScore: {fileID: 177436647}
   goGM: {fileID: 1552742087}
   r2d: {fileID: 1981344852}
+  gm: {fileID: 1552742088}
 --- !u!50 &1981344852
 Rigidbody2D:
   serializedVersion: 4

@@ -41,8 +41,6 @@ public class LearnIf : MonoBehaviour
         {
             print("你被當了!");
         }
-
-
     }
 
     private void Update()
